@@ -4,7 +4,6 @@ import json
 import os
 import shutil
 
-
 def loadConfigFiles(pathConfig="."):
     #Read the parameters from the config file
     parametersFiles = ["parameters.ini"]
@@ -26,9 +25,13 @@ if(os.path.isdir(path1)):
     shutil.rmtree(path1)
 os.mkdir(path1)
 
-for peak in parameters["NPEAKS"]:
-    for out in parameters["NOUT"]:
-        for dim in parameters["NDIM"]:
+NPEAKS = parameters["NPEAKS"]
+NOUT = parameters["NOUT"]
+NDIM = parameters["NDIM"]
+
+for peak in NPEAKS:
+    for out in NOUT:
+        for dim in NDIM :
             parameters["NPEAKS"] = peak
             parameters["NOUT"] = out
             parameters["NDIM"] = dim

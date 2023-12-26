@@ -224,4 +224,5 @@ executionTime = (time.time() - startTime)
 print(pathOut)
 avg = analysis.averageRuns(pathOut) # average the runs
 analysis.plotRuns(avg, generations, pathOut) # plot the curves
-shutil.copy2("config.ini", f"{pathOut}/config.ini") # copy the config file
+if pathConfig == "./":
+    shutil.copy2("config.ini", f"{pathOut}/config.ini") # copy the config file
