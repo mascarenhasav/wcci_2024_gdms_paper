@@ -1,5 +1,5 @@
 '''
-Title: Code to evaluate the Minimum Individual Distance Metric
+Title: Code to evaluate the Minimum Individual Distance Metric (Dmd)
 
 Author: Alexandre Mascarenhas
 Contact: https://mascarenhasav.github.io

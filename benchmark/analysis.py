@@ -44,16 +44,17 @@ def loadConfigFiles(pathConfig="."):
             print(f"{file}", "FILE_NOT_FOUND", f"The {file} file is mandatory!")
     return parameters
 
-parameters = loadConfigFiles()
-
-metrics = {metric: [] for metric in parameters["METRICS_TO_TEST"]}
 def averageRuns(path):
+    parameters = loadConfigFiles(path)
+    metrics = {metric: [] for metric in parameters["METRICS_TO_TEST"]}
     avg = {}
     files = [f for f in listdir(path) if isfile(join(path, f))]
+
     for file in files:
-        df = pd.read_csv(f"{path}/{file}")
-        for metric in parameters["METRICS_TO_TEST"]:
-            metrics[metric].append(df[metric].values)
+        if file[-4:] == ".csv":
+            df = pd.read_csv(f"{path}/{file}")
+            for metric in parameters["METRICS_TO_TEST"]:
+                metrics[metric].append(df[metric].values)
     
     for metric in parameters["METRICS_TO_TEST"]:
         avg[metric] = np.mean(metrics[metric], axis=0)
@@ -67,9 +68,10 @@ def averageRuns(path):
     return avg    
         
 def plotRuns(metrics, generations, path):
+    parameters = loadConfigFiles(path)
     fig, ax = plt.subplots()
     for i, metric in enumerate(parameters["METRICS_TO_TEST"]):
-        plt.plot(generations, metrics[metric], label=f"{metric}", marker=markers_array[i])
+        plt.plot(generations, metrics[metric], fillstyle="none", markeredgewidth=1, linewidth=1, label=f"{metric}", marker=markers_array[i])
         ax.fill_between(generations, metrics[metric] - metrics[f"{metric}_std"], metrics[metric] + metrics[f"{metric}_std"], alpha=0.1)
 
     plt.xlim(0, parameters["NGEN"])

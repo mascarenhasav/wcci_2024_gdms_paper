@@ -1,6 +1,13 @@
-'''
-Title: Code of the benchmark presented in 
+#!/usr/bin/env python3
 
+'''
+Title: Code for the benchmark presented in the following paper:
+
+G. Corriveau, R. Guilbault, A. Tahan and R. Sabourin, 
+"Review and Study of Genotypic Diversity Measures for 
+Real-Coded Representations," in IEEE Transactions on 
+Evolutionary Computation, vol. 16, no. 5, pp. 695-710, 
+Oct. 2012, doi: 10.1109/TEVC.2011.2170075.
 
 Author: Alexandre Mascarenhas
 Contact: https://mascarenhasav.github.io
@@ -13,6 +20,8 @@ import matplotlib.pyplot as plt
 import matplotlib
 import importlib
 import datetime
+import getopt
+import sys
 import csv
 import shutil
 import time
@@ -91,13 +100,33 @@ class optimum_point():
     def pos(self):
         return self.positions
 
+arg_help = "{0} -s <seed> -p <path>".format(sys.argv[0])
+try:
+    opts, args = getopt.getopt(sys.argv[1:], "hs:p:", ["help", "seed=", "path="])
+except:
+    print(arg_help)
+    sys.exit(2)
 
-parameters = loadConfigFiles()
+for opt, arg in opts:
+    if opt in ("-h", "--help"):
+        print(arg_help)  # print the help message
+        sys.exit(2)
+    elif opt in ("-s", "--seed"):
+        if seed >= 0:
+            seed = int(arg)
+    elif opt in ("-p", "--path"):
+        if arg != "./":
+            pathConfig = arg
+
+parameters = loadConfigFiles(pathConfig)
 
 # datetime variables
 cDate = datetime.datetime.now()
 date = {"year": cDate.year, "month": cDate.month, "day": cDate.day, "hour": cDate.hour, "minute": cDate.minute}
-pathOut = checkDirs(path="experiments", date=date)
+if pathConfig == "./":
+    pathOut = checkDirs(path="experiments", date=date)
+else:
+    pathOut = pathConfig
 
 if parameters["PLOT"]:
     fig, ax = plt.subplots()
@@ -192,9 +221,7 @@ for r in range(parameters["NRUNS"]):
         writeLog(1, f"{pathOut}/results_{date['year']}-{date['month']}-{date['day']}-{date['hour']}-{date['minute']}_seed-{seed}_run-{r+1}.csv", header, data = [log]) 
 
 executionTime = (time.time() - startTime)
+print(pathOut)
 avg = analysis.averageRuns(pathOut) # average the runs
 analysis.plotRuns(avg, generations, pathOut) # plot the curves
 shutil.copy2("config.ini", f"{pathOut}/config.ini") # copy the config file
-
- 
-
