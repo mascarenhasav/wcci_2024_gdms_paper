@@ -20,7 +20,7 @@ def loadConfigFiles(pathConfig="."):
 
 parameters = loadConfigFiles()
 
-path1 = parameters["PATH"]
+path1 = f"wcci_2024_experiments/{parameters['PATH']}"
 #f"wcci_2024_experiments"
 
 if(os.path.isdir(path1)):
