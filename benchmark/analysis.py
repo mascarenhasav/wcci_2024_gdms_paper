@@ -81,4 +81,4 @@ def plotRuns(metrics, generations, path):
     plt.grid(1)
     plt.legend(loc='best')
     plt.savefig(f"{path}/metrics_comparison_graph.png")
-    plt.show()
+    #plt.show()

@@ -1,14 +1,16 @@
+#!/usr/bin/env python3
+
 import json
 import os
 import shutil
 
-#NPEAKS = [1, 5, 25]
-#NOUT = [0, 5 ,25]
-#NDIM = [2, 10, 25]
-NPEAKS = [1]
-NOUT = [0, 5, 25]
-NDIM = [2]
-METRICS = ["dmd", "dpw", "dtd", "dmi"]
+NPEAKS = [1, 5, 10, 15, 20, 25, 30, 35, 50, 45, 50]
+NOUT = [0]
+NDIM = [2, 5, 10, 15, 20, 25, 35, 40, 45, 50]
+#NPEAKS = [5]
+#NOUT = [0]
+#NDIM = [2, 5, 10, 25]
+METRICS = ["dmid", "dpw", "dtd", "dmi", "dmst", "drad"]
 parameters = {}
 parameters["NRUNS"] = 3
 parameters["NGEN"] = 100
@@ -25,7 +27,7 @@ for peak in NPEAKS:
             parameters["NPEAKS"] = peak
             parameters["NOUT"] = out
             parameters["NDIM"] = dim
-            path = f"{peak}-{out}-{dim}"
+            path = f"{peak}-{dim}"
             if(os.path.isdir(path) == False):
                 os.mkdir(path)
             else:
