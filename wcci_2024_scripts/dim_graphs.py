@@ -105,5 +105,6 @@ plt.xlabel("Generations")
 plt.ylabel("Metric value")
 plt.grid(1)
 plt.legend(loc='best')
+plt.savefig("test.png")
 plt.show()
-    
+
