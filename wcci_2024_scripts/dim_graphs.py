@@ -63,11 +63,21 @@ for opt, arg in opts:
         if arg != "./":
             path = arg
 
-# Specify the path to the directory you want to list
-directory_path = Path(path)
+# Get a list of all items (files and directories) in the specified directory
+all_items = os.listdir(path)
 
-# Get a list of all directories in the specified directory
-directories = [item for item in directory_path.iterdir() if item.is_dir()]
+# Filter out directories
+directories = [item for item in all_items if os.path.isdir(os.path.join(path, item))]
+
+# Sort the list of directories alphabetically
+directories = sorted(directories, key=lambda x: int(x))
+
+METRICS = ["dmid", "dpw", "dtd", "dmi", "drad", "dmst"]
+data = {"npeaks": [], "ndim": []}
+data |= {metric: [] for metric in METRICS}
+data |= {f"{metric}_std": [] for metric in METRICS}
+print(directories)
+
 
 METRICS = ["dmid", "dpw", "dtd", "dmi", "drad", "dmst"]
 data = {"npeaks": [], "ndim": []}
@@ -75,19 +85,17 @@ data |= {metric: [] for metric in METRICS}
 data |= {f"{metric}_std": [] for metric in METRICS}
 
 for directory in directories:
-    parameters = loadConfigFiles(f"{path}/{directory.name}")
-    name = directory.name.split("-")
-    npeaks = name[0]
-    data["npeaks"].append(int(npeaks))
-    ndim = name[1]
+    parameters = loadConfigFiles(f"{path}/{directory}")
+    #name = directory.split("-")
+    ndim = directory
     data["ndim"].append(int(ndim))
-    df = pd.read_csv(f"{path}/{directory.name}/results_average.csv")
+    df = pd.read_csv(f"{path}/{directory}/results_average.csv")
     last_row = df.tail(1)
     for metric in parameters["METRICS_TO_TEST"]:
         data[metric].append(last_row[metric].values[0])
         data[f"{metric}_std"].append(last_row[f"{metric}_std"].values[0])
 
-data["ndim"].sort()
+#data["ndim"].sort()
 data["ndim"] = np.asarray(data["ndim"])
 
 fig, ax = plt.subplots()
