@@ -89,8 +89,6 @@ for directory in directories:
 
 data["ndim"].sort()
 data["ndim"] = np.asarray(data["ndim"])
-data["npeaks"].sort()
-data["npeaks"] = np.asarray(data["npeaks"])
 
 fig, ax = plt.subplots()
 for i, metric in enumerate(METRICS):
@@ -101,10 +99,10 @@ for i, metric in enumerate(METRICS):
 
 #plt.xlim(0, )
 #plt.ylim(0, 1)
-plt.xlabel("Generations")
-plt.ylabel("Metric value")
+plt.xlabel("Dimensions")
+plt.ylabel("Metric final value")
 plt.grid(1)
 plt.legend(loc='best')
-plt.savefig("test.png")
+plt.savefig("dimensions.png")
 plt.show()
 

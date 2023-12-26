@@ -20,7 +20,9 @@ def loadConfigFiles(pathConfig="."):
 
 parameters = loadConfigFiles()
 
-path1 = f"wcci_2024_experiments"
+path1 = parameters["PATH"]
+#f"wcci_2024_experiments"
+
 if(os.path.isdir(path1)):
     shutil.rmtree(path1)
 os.mkdir(path1)
