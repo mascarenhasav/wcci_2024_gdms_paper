@@ -36,7 +36,7 @@ plt.rc('font', size=BIGGER_SIZE)          # controls default text sizes
 
 colors_array = list(matplotlib.colors.cnames.keys())
 markers_array = list(matplotlib.markers.MarkerStyle.markers.keys())
-plots = [1, 25, 50, 75, 95]
+plots = [1, 33, 66, 98]
 colors_array = ["red", "green", "blue", "orange", "black"]
 
 def loadConfigFiles(pathConfig="."):
@@ -107,6 +107,7 @@ except:
     print(arg_help)
     sys.exit(2)
 
+pathConfig="./"
 for opt, arg in opts:
     if opt in ("-h", "--help"):
         print(arg_help)  # print the help message
@@ -171,7 +172,8 @@ for r in range(parameters["NRUNS"]):
             if(parameters["PLOT"] and g in plots):
                 plt.xlim(0, 100)
                 plt.ylim(0, 100)
-                plt.scatter(x=optimum.pos()[0], y=optimum.pos()[1], s=2, color=colors_array[i], marker="X")
+                plt.scatter(x=optimum.pos()[0], y=optimum.pos()[1], s=20, color=colors_array[i], marker="X")
+                #plt.scatter(x=optimum.pos()[0], y=optimum.pos()[1], s=10, color=colors_array[i], marker="X")
                 plt.plot((optimum.position_min[0], optimum.position_min[0]), (optimum.position_min[1], optimum.position_max[1]), c=colors_array[i])
                 plt.plot((optimum.position_max[0], optimum.position_max[0]), (optimum.position_min[1], optimum.position_max[1]), c=colors_array[i])
                 plt.plot((optimum.position_min[0], optimum.position_max[0]), (optimum.position_min[1], optimum.position_min[1]), c=colors_array[i])
@@ -210,6 +212,9 @@ for r in range(parameters["NRUNS"]):
                 if parameters["NOUT"] and g >= parameters["GOUT"][0]:
                     for ind in optimum.outliers:
                         plt.scatter(x=ind[0], y=ind[1], s=10, c=colors_array[i], marker=markers_array[i])
+            plt.xlabel("d1")
+            plt.ylabel("d2")
+            plt.savefig(f"plot_multi_{g}.png")
             plt.show()
             
         generations.append(g)
