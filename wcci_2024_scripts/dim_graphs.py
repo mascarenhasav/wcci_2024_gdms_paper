@@ -72,14 +72,8 @@ directories = [item for item in all_items if os.path.isdir(os.path.join(path, it
 # Sort the list of directories alphabetically
 directories = sorted(directories, key=lambda x: int(x))
 
-METRICS = ["dmid", "dpw", "dtd", "dmi", "drad", "dmst"]
-data = {"npeaks": [], "ndim": []}
-data |= {metric: [] for metric in METRICS}
-data |= {f"{metric}_std": [] for metric in METRICS}
-print(directories)
-
-
-METRICS = ["dmid", "dpw", "dtd", "dmi", "drad", "dmst"]
+METRICS = ["dpw", "dtd", "dmi", "dvac", "dtap", "dmid"]
+#METRICS = ["dpw", "dtd", "dmi", "dtap", "dmid"]
 data = {"npeaks": [], "ndim": []}
 data |= {metric: [] for metric in METRICS}
 data |= {f"{metric}_std": [] for metric in METRICS}

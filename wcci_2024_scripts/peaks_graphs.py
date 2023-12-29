@@ -72,7 +72,7 @@ directories = [item for item in all_items if os.path.isdir(os.path.join(path, it
 # Sort the list of directories alphabetically
 directories = sorted(directories, key=lambda x: int(x))
 
-METRICS = ["dmid", "dpw", "dtd", "dmi", "drad", "dmst"]
+METRICS = ["dpw", "dtd", "dmi", "dvac", "dtap", "dmid"]
 data = {"npeaks": [], "ndim": []}
 data |= {metric: [] for metric in METRICS}
 data |= {f"{metric}_std": [] for metric in METRICS}
@@ -85,9 +85,14 @@ for directory in directories:
     data["npeaks"].append(int(npeaks))
     df = pd.read_csv(f"{path}/{directory}/results_average.csv")
     last_row = df.tail(1)
+    print("----------")
     for metric in parameters["METRICS_TO_TEST"]:
-        data[metric].append(last_row[metric].values[0])
-        data[f"{metric}_std"].append(last_row[f"{metric}_std"].values[0])
+        print(metric)
+        value = last_row[metric].values[0]
+        std = last_row[f"{metric}_std"].values[0]
+        data[metric].append(value)
+        data[f"{metric}_std"].append(std)
+        print(f"{value:.4f}({std:.4f})")
 
 #data["npeaks"].sort()
 data["npeaks"] = np.asarray(data["npeaks"])
@@ -100,7 +105,7 @@ for i, metric in enumerate(METRICS):
     ax.fill_between(data["npeaks"], data[metric] - data[f"{metric}_std"], data[metric] + data[f"{metric}_std"], alpha=0.1)
 
 #plt.xlim(0, )
-#plt.ylim(0, 1)
+plt.ylim(0, 0.1)
 plt.xlabel("Peaks")
 plt.ylabel("Metric final value")
 plt.grid(1)
