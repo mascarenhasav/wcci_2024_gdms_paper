@@ -1,4 +1,4 @@
 All contributors:
-* Alexandre Mascarenhas (`@mascarenhasav <https://github.com/mascarenhasav>`_)
-* Yu Kobayashi 
-* Claus Aranha
+* Alexandre Mascarenhas 
+* Yu Kobayashi (`@mascarenhasav <https://github.com/mascarenhasav>`_)
+* Claus Aranha (`@mascarenhasav <https://github.com/mascarenhasav>`_)
