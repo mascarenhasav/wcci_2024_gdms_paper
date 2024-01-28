@@ -1,16 +1,27 @@
-Experiment A - Assessment of theoretical properties
+Experiment B - Centroids
 ===================================================
 
 Description
 -----------
 
-We conducted a mathematical assessment of the metrics' performance on a simple dataset with a fixed population diversity. This evaluation was based on the seven cases proposed by `Corriveau et al <https://api.semanticscholar.org/CorpusID:2995563>`_. In these cases, with the exception of cases 6 and 7, all solutions converged perfectly to predefined optimal points. This convergence allows us to observe diversity without being influenced by variations in values due to data variability.
+Elements that contribute to the promotion of increased diversity include the number of niches within a population and the variability of individuals. Understanding how each metric evaluates different scenarios allows for the adoption of metrics tailored to the diversity needs of users. An experiment is conducted using a easily creatable 2D landscape datasets to visualize the impact of the number of niches and the variability of individuals on metric values.
 
-All these cases are situated on a 2D landscape within the range of $[-1, 1]$, with a constant population size of 100. In Case 1, a single optimal point exists at the center of the landscape, and the population is concentrated at this central point. In Case 2, the optimal point lies between the center and the corner of the landscape, and the population is uniformly distributed. Case 3 shares the same optimal point as Case 2 but exhibits non-uniform population distribution. Case 4 features the optimal point at the corner of the landscape, with an even distribution of the population. Similarly, Case 5 has the same optimal point as Case 4 but also displays non-uniform population distribution. In both Case 3 and Case 5, 70\% of the individuals are concentrated at one optimal point, while the remaining 30\% are evenly distributed among the other optimal points. In Case 6, individuals are evenly distributed along the diagonal of the landscape. Lastly, in Case 7, individuals are uniformly distributed at regular intervals across the landscape. Figure \ref{fig:flozencase} illustrates the population distributions.
+The dataset utilized in the experiment is created by providing several centroids and generating individuals uniformly within squares centered around these centroids. The number of centroids ranges from 1 to 13, with 13 possible configurations, distributed on a 2D landscape in the range of $[0, 1]$. 
+The positions of the centroids are determined by selecting 13 points from an infinite set of points within the $[0, 1]^2$. When multiple centroids are used, they are utilized in the order in which they are selected. The side length of the square takes 13 equally spaced values ranging from 0.002 to 0.250. The choice of 0.250 ensures that even with the maximum number of centroids, the squares do not overlap. From the above, a total of 169 patterns of data will be generated. The population size is fixed at 260 individuals per pattern, and individuals are distributed within each square in as equal numbers as possible.
 
-In these frozen cases, the diversity ranking must be $case1 < case2 = case3 < case4 = case5 < case6 < case7$ in order to satisfy the three diversity requirements proposed by Corriveau.
+In this experiment, 169 patterns of data will be created 50 times. The average metric value for each pattern will be calculated, and contour plots will be generated based on these average values. The metric values are normalized by the maximum value among the 169 patterns. The behavior sought for each metric in this dataset is an increase in diversity as the number of centroids grows for any given side length. Additionally, an increase in diversity is expected as the side length of the square becomes larger for any given number of centroids.
+
+Paper's dataset
+---------------
+
+The dataset used in the paper is at `paper dataset <https://github.com/mascarenhasav/wcci_2024_gdms/tree/main/experiment_B_2/paper_dataset>`_ folder.
 
 How to run
 -----------
 
 A very simple explanation in how to run the experiments
+
+Results
+-------
+
+Once you run the script and the generated data is in the $XXXX$ folder.
