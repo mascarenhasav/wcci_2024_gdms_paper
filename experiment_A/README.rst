@@ -10,7 +10,19 @@ All these cases are situated on a 2D landscape within the range of $[-1, 1]$, wi
 
 In these frozen cases, the diversity ranking must be $case1 < case2 = case3 < case4 = case5 < case6 < case7$ in order to satisfy the three diversity requirements proposed by Corriveau.
 
+
+Paper's dataset
+---------------
+
+The dataset used in the paper is at `paper dataset <https://github.com/mascarenhasav/wcci_2024_gdms/tree/main/experiment_B_2/paper_dataset>`_ folder.
+
 How to run
 -----------
 
 A very simple explanation in how to run the experiments
+
+
+Results
+-------
+
+Once you run the script and the generated data is in the $XXXX$ folder.
