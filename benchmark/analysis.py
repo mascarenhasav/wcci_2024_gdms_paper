@@ -21,6 +21,11 @@ import os
 from os import listdir
 from os.path import isfile, join
 
+#plt.style.use("dark_background")
+#plt.rcParams["axes.facecolor"] = "#1c1c1c"
+#plt.rcParams["savefig.facecolor"] = "#1c1c1c"
+plt.rcParams["figure.figsize"] = (12, 6)
+
 SMALL_SIZE = 8
 MEDIUM_SIZE = 10
 BIGGER_SIZE = 15
