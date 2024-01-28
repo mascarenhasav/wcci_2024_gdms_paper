@@ -2,7 +2,7 @@ Novel Genotypic Diversity Metrics in Real-coded Optimization on Multi-modal Prob
 ====================================================================================
 |License| |DOI|
 
-This repository makes all experiments and datasets available for reproducibility of the results presented in the `paper <https://github.com/mascarenhasav/wcci_2024_gdms/blob/main/paper/WCCI_2024_Diversity_Metric-1.pdf>`_.
+This repository makes all experiments and datasets available for reproducibility of the results presented in the `paper <https://github.com/mascarenhasav/wcci_2024_gdms/blob/main/paper/WCCI_2024_Diversity_Metric-1.pdf>`_ submitted to WCCI 2024 CEC.
 
 Installation and Dependencies
 -----------------------------
