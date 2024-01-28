@@ -1,8 +1,6 @@
-|logo|
+Novel Genotypic Diversity Metrics in Real-coded Optimization on Multi-modal Problems
 
-AbEC is a Component-based Framework for Research and Development in Static and Dynamic Evolutionary Computation 
-
-|Build status| |Coverage Status| 
+In order to allow the reproducibility of the results presented in the paper "", this repository makes all experiments and datasets used available.
 
 Documentation
 -------------
@@ -28,22 +26,22 @@ instructions <https://abec-ec.github.io/install.html>`_ in the
 Attribution
 -----------
 
-|JOSS| |DOI|
+|DOI|
 
 If you make use of this code, please cite the `JOSS <http://joss.theoj.org>`_
 paper::
 
     @article{abec,
-      doi = {xx.xxxxxxx/joss.xxxxx},
-      url = {https://doi.org/xx.xxxxxx/joss.xxxxx},
+      doi = {xx.xxxxxxx/xxxx.xxxxx},
+      url = {https://doi.org/xx.xxxxxx/xxxx.xxxxx},
       year = 2024,
       month = {xxx},
-      publisher = {The Open Journal},
+      publisher = {},
       volume = {x},
       number = {xx},
       author = {Alexandre Mascarenhas},
-      title = {AbEC - Adjustable Evolutionary Components: A Component-based Framework for Research and Development in Static and Dynamic Evolutionary Computation },
-      journal = {The Journal of Open Source Software}
+      title = {Novel Genotypic Diversity Metrics in Real-coded Optimization on Multi-modal Problems},
+      journal = {}
     }
 
 Please also cite the Zenodo DOI |DOI| as a software citation - see the
@@ -59,18 +57,16 @@ License
 Copyright 2024 Alexandre Mascarenhas and contributors.
 
 ``AbEC`` is free software made available under the MIT License. For details see
-the `LICENSE <https://github.com/AbEC-EC/AbEC/blob/main/LICENCE>`_ file.
+the `LICENSE <https://github.com/mascarenhasav/wcci_2024_gdms/blob/main/LICENCE>`_ file.
 
 .. |Coverage Status| image:: https://codecov.io/gh/adrn/gala/branch/main/graph/badge.svg
    :target: https://codecov.io/gh/adrn/gala
 .. |Build status| image:: https://github.com/adrn/gala/actions/workflows/tests.yml/badge.svg
    :target: https://github.com/adrn/gala/actions/workflows/tests.yml
 .. |License| image:: http://img.shields.io/badge/license-MIT-blue.svg?style=flat
-   :target: https://github.com/AbEC-EC/AbEC/blob/main/LICENCE
+   :target: https://github.com/mascarenhasav/wcci_2024_gdms/blob/main/LICENCE
 .. |Documentation Status| image:: https://readthedocs.org/projects/abec/badge/?version=latest
    :target: https://abec.readthedocs.io/en/latest/?badge=latest
-.. |JOSS| image:: 
-   :target: 
 .. |DOI| image:: https://zenodo.org/badge/17577779.svg
    :target: https://zenodo.org/badge/latestdoi/17577779
 .. |ASCL| image:: https://img.shields.io/badge/ascl-1707.006-blue.svg?colorB=262255
@@ -82,6 +78,6 @@ the `LICENSE <https://github.com/AbEC-EC/AbEC/blob/main/LICENCE>`_ file.
 Contributors
 ------------
 
-See the `AUTHORS.rst <https://github.com/AbEC-EC/AbEC/blob/main/AUTHORS.rst>`_
+See the `AUTHORS.rst <https://github.com/mascarenhasav/wcci_2024_gdms/blob/main/AUTHORS.rst>`_
 file for a complete list of contributors to the project.
 
