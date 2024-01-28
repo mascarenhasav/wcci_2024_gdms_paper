@@ -1,5 +1,6 @@
 Novel Genotypic Diversity Metrics in Real-coded Optimization on Multi-modal Problems
 ====================================================================================
+|License| |DOI|
 
 This repository makes all experiments and datasets available for reproducibility of the results presented in the `paper <https://github.com/mascarenhasav/wcci_2024_gdms/blob/main/paper/WCCI_2024_Diversity_Metric-1.pdf>`_.
 
@@ -19,7 +20,7 @@ Attribution
 
 |DOI|
 
-If you make use of this code, please cite the paper as foolows::
+To cite this paper please use as follows::
 
     @article{,
       doi = {xx.xxxxxxx/xxxx.xxxxx},
@@ -33,11 +34,6 @@ If you make use of this code, please cite the paper as foolows::
       title = {Novel Genotypic Diversity Metrics in Real-coded Optimization on Multi-modal Problems},
       journal = {}
     }
-
-Please also cite the Zenodo DOI |DOI| as a software citation - see the
-`documentation
-<https://abec-ec.github.io>`_ for up
-to date citation information.
 
 License
 -------
