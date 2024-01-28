@@ -1,6 +1,7 @@
 Novel Genotypic Diversity Metrics in Real-coded Optimization on Multi-modal Problems
+====================================================================================
 
-In order to allow the reproducibility of the results presented in the paper "", this repository makes all experiments and datasets used available.
+This repository makes all experiments and datasets available for reproducibility of the results presented in the `paper <https://github.com/mascarenhasav/wcci_2024_gdms/blob/main/paper/WCCI_2024_Diversity_Metric-1.pdf>`_.
 
 Installation and Dependencies
 -----------------------------
@@ -45,7 +46,7 @@ License
 
 Copyright 2024 contributors.
 
-``AbEC`` is free and made available under the MIT License. For details see
+The content of this repository is free and made available under the MIT License. For details see
 the `LICENSE <https://github.com/mascarenhasav/wcci_2024_gdms/blob/main/LICENCE>`_ file.
 
 .. |License| image:: http://img.shields.io/badge/license-MIT-blue.svg?style=flat
