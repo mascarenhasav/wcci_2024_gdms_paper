@@ -47,8 +47,8 @@ the `LICENSE <https://github.com/mascarenhasav/wcci_2024_gdms/blob/main/LICENCE>
 
 .. |License| image:: http://img.shields.io/badge/license-MIT-blue.svg?style=flat
    :target: https://github.com/mascarenhasav/wcci_2024_gdms/blob/main/LICENCE
-.. |DOI| image:: https://zenodo.org/badge/17577779.svg
-   :target: https://zenodo.org/badge/latestdoi/17577779
+.. |DOI| image:: https://
+   :target: https://
 .. |logo| image:: https://github.com/AbEC-EC/AbEC/blob/main/docs/abec-logo2-nb.png
    :target: https://github.com/AbEC-EC/AbEC
    :width: 400
