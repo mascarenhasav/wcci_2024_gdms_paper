@@ -28,6 +28,7 @@ SMALL_SIZE = 8
 MEDIUM_SIZE = 10
 BIGGER_SIZE = 15
 plt.rc('font', size=BIGGER_SIZE)          # controls default text sizes
+plt.rcParams["figure.figsize"] = (7, 5)
 
 colors_array = list(matplotlib.colors.cnames.keys())
 markers_array = list(matplotlib.markers.MarkerStyle.markers.keys())
@@ -72,7 +73,7 @@ directories = [item for item in all_items if os.path.isdir(os.path.join(path, it
 # Sort the list of directories alphabetically
 directories = sorted(directories, key=lambda x: int(x))
 
-METRICS = ["dpw", "dtd", "dmi", "dvac", "dtap", "dmid"]
+METRICS = ["dpw", "dmst", "drad", "dmid"]
 #METRICS = ["dpw", "dtd", "dmi", "dtap", "dmid"]
 data = {"npeaks": [], "ndim": []}
 data |= {metric: [] for metric in METRICS}
@@ -101,6 +102,7 @@ for i, metric in enumerate(METRICS):
 
 #plt.xlim(0, )
 #plt.ylim(0, 1)
+ax.set_yscale('log')
 plt.xlabel("Dimensions")
 plt.ylabel("Metric final value")
 plt.grid(1)
